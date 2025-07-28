@@ -6,6 +6,9 @@ const authorEl = document.querySelector('#author');
 const cryptoTopEl = document.querySelector('#crypto-top');
 const cryptoEndEl = document.querySelector('#crypto-end');
 
+/* TIME */
+const timeEl = document.querySelector('#time');
+
 /* GET BACKGROUND IMAGE */
 async function getBackgroundImage() {
     try {
@@ -47,9 +50,14 @@ async function getCryptoData() {
 
 getCryptoData();
 
-const now = new Date();
-const formattedTime = now.toLocaleTimeString('ar-ES', {
-    timeStyle: 'short',
-    hour12: false
-});
-console.log(formattedTime);
+/* GET TIME */
+setInterval(updateTime, 1000);
+function updateTime() {
+    const now = new Date();
+    const formattedTime = now.toLocaleTimeString('ar-ES', {
+        timeStyle: 'short',
+        hour12: false
+    });
+
+    timeEl.textContent = formattedTime;
+}
