@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 0px 20px #aaaaaa;
+}
+
+main {
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1.time {
+    text-align: center;
+}
+
+div.crypto {
+    font-size: 1.3rem;
+}
+
+div.crypto-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
