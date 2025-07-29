@@ -75,9 +75,14 @@ navigator.geolocation.getCurrentPosition(position => {
                 throw Error("Weather data not available");
             } */
             const data = await res.json();
-            console.log(data.weather[0].icon);
+            console.log(data);
             weatherEl.innerHTML = `
+                <div class="weather">
                 <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+                <p class="temp">${Math.round(data.main.temp)}°C</p>
+                </div>
+                <p class="city">${data.name}</p>
+
             `;
         } catch (error) {
             console.log('Failed to fetch weather data');
