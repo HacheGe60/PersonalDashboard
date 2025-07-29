@@ -15,7 +15,7 @@ const weatherEl = document.querySelector('#weather');
 /* GET BACKGROUND IMAGE */
 async function getBackgroundImage() {
     try {
-        const res = await fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=sailboat');
+        const res = await fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=retail');
         const data = await res.json();
         bodyEl.style.backgroundImage = `url(${data.urls.regular})`;
         authorEl.textContent = `By ${data.user.name}`;
