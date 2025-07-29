@@ -63,5 +63,20 @@ function updateTime() {
 }
 
 navigator.geolocation.getCurrentPosition(position => {
-    console.log(position.coords.latitude, position.coords.longitude);
+    const lat = position.coords.latitude;
+    const long = position.coords.longitude;
+    async function getWeatherData() {
+        try {
+            const res = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${lat}&lon=${long}&units=metric`);
+            if (!res.ok) {
+                throw Error("Weather data not available");
+            }
+            const data = await res.json();
+            console.log(data);
+        } catch (error) {
+            console.log('Failed to fetch weather data');
+        }
+    }
+
+    getWeatherData();
 });
