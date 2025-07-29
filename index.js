@@ -9,6 +9,9 @@ const cryptoEndEl = document.querySelector('#crypto-end');
 /* TIME */
 const timeEl = document.querySelector('#time');
 
+/* WEATHER */
+const weatherEl = document.querySelector('#weather');
+
 /* GET BACKGROUND IMAGE */
 async function getBackgroundImage() {
     try {
@@ -68,11 +71,14 @@ navigator.geolocation.getCurrentPosition(position => {
     async function getWeatherData() {
         try {
             const res = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${lat}&lon=${long}&units=metric`);
-            if (!res.ok) {
+            /* if (!res.ok) {
                 throw Error("Weather data not available");
-            }
+            } */
             const data = await res.json();
-            console.log(data);
+            console.log(data.weather[0].icon);
+            weatherEl.innerHTML = `
+                <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+            `;
         } catch (error) {
             console.log('Failed to fetch weather data');
         }
