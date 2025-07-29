@@ -41,3 +41,23 @@ div.crypto-top {
     align-items: center;
     gap: 0.5rem;
 }
+
+div.weather-icon {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+}
+
+div.weather-icon img {
+    width: 80px;
+}
+
+div.weather-icon p {
+    font-size: 2rem;
+}
+
+p.city {
+    font-size: 1.2rem;
+    text-align: right;
+    margin-top: -.5rem;
+}
